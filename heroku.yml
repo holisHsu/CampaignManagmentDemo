@@ -1,0 +1,11 @@
+build:
+  docker:
+    web: Dockerfile
+
+release:
+  command:
+    - echo 'Release phase completed'
+  image: web
+
+run:
+  web: /start.sh
