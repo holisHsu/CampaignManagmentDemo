@@ -4,6 +4,7 @@ build:
 
 release:
   command:
+    - python manage.py migrate --noinput
     - echo 'Release phase completed'
   image: web
 

@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: placements_db
+    environment:
+      POSTGRES_DB: placements
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5466:5432"
+    volumes:
+      - placements_postgres_data:/var/lib/postgresql/data
+    restart: on-failure
+
+volumes:
+  placements_postgres_data:
